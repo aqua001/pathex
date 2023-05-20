@@ -9,20 +9,20 @@ import (
 	"strings"
 )
 
-func getFileAbsPath(base string, file string) string {
+func GetFileAbsPath(base string, file string) string {
 	if !filepath.IsAbs(file) {
 		file = filepath.Join(base, file)
 	}
 	return file
 }
-func getCurrentAbPath() string {
+func GetCurrentAbPath() string {
 	dir := getCurrentAbPathByExecutable()
 	if strings.Contains(dir, getTmpDir()) {
 		return getCurrentAbPathByCaller()
 	}
 	return dir
 }
-func getTmpDir() string {
+func GetTmpDir() string {
 	dir := os.Getenv("TEMP")
 	if dir == "" {
 		dir = os.Getenv("TMP")
