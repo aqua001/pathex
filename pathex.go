@@ -17,7 +17,7 @@ func GetFileAbsPath(base string, file string) string {
 }
 func GetCurrentAbPath() string {
 	dir := getCurrentAbPathByExecutable()
-	if strings.Contains(dir, getTmpDir()) {
+	if strings.Contains(dir, GetTmpDir()) {
 		return getCurrentAbPathByCaller()
 	}
 	return dir
